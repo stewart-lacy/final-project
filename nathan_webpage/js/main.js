@@ -16,17 +16,68 @@ map.fitBounds(bounds);
 
 var theMarker = {};
 
-map.on('click',function(e){
-  lat = e.latlng.lat;
-  lon = e.latlng.lng;
+let shooter = "Point Guard";
 
-  console.log("You clicked the map at LAT: "+ lat+" and LONG: "+lon );
+let probability = "0.57";
+
+
+map.on('click',function(e){
+    lat = e.latlng.lat;
+    lon = e.latlng.lng;
+
+    console.log("You clicked the map at LAT: "+ lat+" and LONG: "+lon );
       //Clear existing marker, 
 
-      if (theMarker != undefined) {
-            map.removeLayer(theMarker);
-      };
+    if (theMarker != undefined) {
+        map.removeLayer(theMarker);
+    };
+
+    emptyTheBoxes();
 
   //Add a marker to show where you clicked.
-   theMarker = L.marker([lat,lon]).addTo(map);  
+    theMarker = L.marker([lat,lon]).addTo(map);
+
+    fillTheBoxes();
 });
+
+
+
+function emptyTheBoxes() {
+    let shooterInformation = d3.select("#shooterResponse");
+    let probabilityInformation = d3.select("#probabilityResponse")
+
+    shooterInformation.html("");
+    probabilityInformation.html("");
+}
+
+function fillTheBoxes() {
+    let shooterInformation = d3.select("#shooterResponse");
+    let probabilityInformation = d3.select("#probabilityResponse")
+
+    shooterInformation.append("h5").text(shooter);
+    probabilityInformation.append("h5").text(probability);
+
+}
+
+function choice(y) {
+    console.log(y);
+}
+
+
+function kickoff() {
+    
+    let dropdown = d3.select("#dropDown");
+    
+    d3.json("data/standin_data.json").then(function(data) {
+
+        console.log(data);
+
+        data.names.forEach(function(name) {
+            dropdown.append("option").text(name).property("value");
+        });
+
+    });
+    
+}
+
+kickoff();
