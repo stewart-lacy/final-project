@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Who Took the Shot?</title>
+        <title>What Player Took the Shot?</title>
 
         <!-- And the bootstrap stylesheet -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -33,16 +33,20 @@
                 <a class="nav-link" href="index.html">Home<span class="sr-only"></span></a>
                 </li>
 
+                <li class="nav-item">
+                <a class="nav-link" href="model_position.html">Model by Position<span class="sr-only"></span></a>
+                </li>
+
                 <li class="nav-item active">
-                <a class="nav-link" href="model_position.html">Model<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="model_player.html">Model by Player<span class="sr-only">(current)</span></a>
                 </li>
 
                 <li class="nav-item">
-                <a class="nav-link" href="model_player.html">Model<span class="sr-only"></span></a>
+                <a class="nav-link" href="data.html">Data<span class="sr-only"></span></a>
                 </li>
 
                 <li class="nav-item">
-                <a class="nav-link" href="data.html">Model<span class="sr-only"></span></a>
+                <a class="nav-link" href="method.html">Method<span class="sr-only"></span></a>
                 </li>
 
             </div>
@@ -75,10 +79,10 @@
                     <p>Information on the shot:</p>
                     <br>
                     <p>This shot was probably taken by:</p>
-                    <div id = "shooterResponse"></div>
+                    <div id = "playerShotResponse"></div>
                     <hr>
                     <p>The probability of this estimate is:</p>
-                    <div id = "probabilityResponse"></div>
+                    <div id = "playerProbabilityResponse"></div>
 
                 </div> 
 
@@ -104,7 +108,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.7/d3.min.js"></script>
 
         <!-- The script for generating the court map. -->
-        <script src="js/main.js"></script>
+        <script src="js/byplayer.js"></script>
 
     </body>
 </html>

@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Who Took the Shot?</title>
+        <title>Shot Data</title>
 
         <!-- And the bootstrap stylesheet -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -30,81 +30,50 @@
                 <ul class="navbar-nav mr-auto">
 
                 <li class="nav-item">
-                <a class="nav-link" href="index.html">Home<span class="sr-only"></span></a>
+                <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item">
+                <a class="nav-link" href="model_position.html">Model by Position<span class="sr-only"></span></a>
+                </li>
+
+                <li class="nav-item">
+                <a class="nav-link" href="model_player.html">Model by Player<span class="sr-only"></span></a>
                 </li>
 
                 <li class="nav-item active">
-                <a class="nav-link" href="model_position.html">Model<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="data.html">Data<span class="sr-only"></span></a>
                 </li>
 
                 <li class="nav-item">
-                <a class="nav-link" href="model_player.html">Model<span class="sr-only"></span></a>
-                </li>
-
-                <li class="nav-item">
-                <a class="nav-link" href="data.html">Model<span class="sr-only"></span></a>
+                <a class="nav-link" href="method.html">Method<span class="sr-only"></span></a>
                 </li>
 
             </div>
         </nav>
+
+        <div class = "container">
+
+            <div class = "row">
+
+                <div class = "column md-6">
+                    <select id="positionShotDropDown" onchange="choice(this.value)"></select>
+                </div>
+
+                <div class = "column md-6">
+                    <select id="playerShotDropDown" onchange="choice(this.value)"></select>
+                </div>
+
+            </div>
         
-        <div class="container">
+        <!-- D3 Library -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.7/d3.min.js"></script>
 
-            <div class = "row">
-
-                <div class = "col-md-12">
-                    <select id="dropDown" onchange="choice(this.value)"></select>
-                </div>
-
-            </div>
-            
-            <div class = "row">
-
-                <div class = "col-md-8">
-                    <p>Click a position on the basketball court:</p>
-
-                    <div class = "wrapper">
-
-                        <div id="leftCourt"></div>
-
-                    </div>
-
-                </div> 
-
-                <div class = "col-md-4">
-                    <p>Information on the shot:</p>
-                    <br>
-                    <p>This shot was probably taken by:</p>
-                    <div id = "shooterResponse"></div>
-                    <hr>
-                    <p>The probability of this estimate is:</p>
-                    <div id = "probabilityResponse"></div>
-
-                </div> 
-
-            </div>
-
-            </div class = "row">
-                <div class = "col-md-12">
-                    <p>Does adding a row to the bottom fix my scrolling problem?</p>
-                </div>
-            </div>
-
-        </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
-         
-        <!-- Include the Leaflet JS Library -->
-        <script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js" integrity="sha512-mNqn2Wg7tSToJhvHcqfzLMU6J4mkOImSPTxVZAdo+lcPlk+GhZmYgACEe0x35K7YzW1zJ7XyJV/TT1MrdXvMcA==" crossorigin=""></script>
-
-        <!-- D3 Library -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.7/d3.min.js"></script>
-
-        <!-- The script for generating the court map. -->
-        <script src="js/main.js"></script>
+        <script src="js/renderdata.js"></script>
 
     </body>
 </html>
