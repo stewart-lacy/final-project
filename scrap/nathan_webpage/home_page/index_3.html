@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>basket ball</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
+ 
+	<!-- Stylesheets -->
+	<!--<link rel="stylesheet" href="css/bootstrap.min.css"/>-->
+	<link rel="stylesheet" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/owl.carousel.min.css"/>
+	<link rel="stylesheet" href="css/slicknav.min.css"/>
+
+	<!-- Main Stylesheets -->
+	<link rel="stylesheet" href="css/style.css"/>
+
+
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+
+	<!-- Header section -->
+	<header class="header-section clearfix">
+		<a href="index_3.html" class="site-logo">
+			<img src="img/logo_sun.png" alt="">
+        </a>
+        
+		<ul class="main-menu">
+			<li><a href="index_3.html">Home</a></li>
+			<li><a href="../model_player.html">Position</a></li>
+			<li><a href="../model_player.html">Player</a></li>
+			<li><a href="../data.html">Data</a></li>
+			<li><a href="../method.html">Method</a></li>
+		</ul>
+    </header>
+    
+	<!-- Hero section -->
+	<section class="hero-section">
+		<div class="hero-slider owl-carousel">
+			<div class="hs-item">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="hs-text">
+								<h2><span>Where</span> is the shooter?</h2>
+								<p>Every basket begins with a shooter, we want to know where the shots are taken.</p>
+								<a href="../model_player.html" class="site-btn">By Player</a>
+								<a href="../model_position.html" class="site-btn sb-c2">By Position</a>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="hr-img">
+								<img src="img/bg.png" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="hs-item">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="hs-text">
+								<h2><span>Did </span> the shots score?</h2>
+								<p>Wherever the players take the shots, we want to the chance to score</p>
+								<a href="../model_position.html" class="site-btn">By Position</a>
+								<a href="../model_player.html" class="site-btn sb-c2">By Player</a>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="hr-img">
+								<img src="img/bg.png" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!--</div>-->
+	</section>
+	<!-- Hero section end -->
+
+	<!-- Intro section -->
+	<section class="intro-section spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="section-title">
+						<h2>Overview</h2>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<p>For this project we took a seasons worth or shots (from the 2016 Chicago Bulls).  We want to use this data to show Basketball players where shots fall from.  We feel that by providing a seasons worth of data, from a professional team we may educate players of all skill levels where to shoot from.</p>
+					<a href="../method.html" class="site-btn">See our method</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Intro section end -->
+
+	<!-- How section -->
+	<section class="how-section spad set-bg" data-setbg="img/how-to-bg.jpg">
+		<div class="container text-white">
+			<div class="section-title">
+				<h2>Our library</h2>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="how-item">
+						<div class="hi-icon">
+							<img src="img/pandas.png" alt="">
+						</div>
+						<h4>Pandas</h4>
+						<p>We used Pandas to aggregate data and plot the shots from the top 6 players in 2016</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="how-item">
+						<div class="hi-icon">
+							<img src="img/machine_leanring.png" alt="">
+						</div>
+						<h4>Scikit-Learn</h4>
+						<p>We used Gradient Boosting Tress to predict the shots are taken in different positions</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="how-item">
+						<div class="hi-icon">
+							<img src="img/plot.png" alt="">
+						</div>
+						<h4>Leaflet</h4>
+						<p>We used leaflet to visualize the shots taken at the court.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- How section end -->
+
+	<!-- Concept section -->
+	<section class="concept-section spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="section-title">
+						<h2>Our Result</h2>
+					</div>
+				</div>
+				<div class="col-lg-6">
+                   <p>Our machine learning findings were statistically significant. With a 20% chance of choosing the position correctly initially (assuming a 1/5 probability).  Our model was able to improve the probability to 61.7% accuracy (training score).   This states our model is predicting the correct position 61.7% of the time, based off the top players like below:</p>
+                </div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3 col-sm-6">
+					<div class="concept-item">
+						<img src="img/Jimmy.jpg" alt="">
+						<h5>Jimmy Butler</h5>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="concept-item">
+						<img src="img/Dwyane.jpg" alt="">
+						<h5>Dwyane Wade</h5>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="concept-item">
+						<img src="img/Robin.jpg" alt="">
+						<h5>Robin Lopez</h5>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="concept-item">
+						<img src="img/Nicola.jpg" alt="">
+						<h5>Nikola Mirotic</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Concept section end -->
+
+
+	<!-- Footer section -->
+	<footer class="footer-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-6 col-lg-7 order-lg-2">
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="footer-widget">
+								<h2>Model</h2>
+								<ul>
+									<li><a href="../model_position.html">By position</a></li>
+									<li><a href="../model_player.html">By player</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="footer-widget">
+								<h2><a href="../method.html">Method</a></h2>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="footer-widget">
+								<h2><a href="../data.html">Data</a></h2>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-6 col-lg-5 order-lg-1">
+					<img src="img/logo.png" alt="">
+					<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- Footer section end -->
+	
+	<!--====== Javascripts & Jquery ======-->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.slicknav.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/mixitup.min.js"></script>
+	<script src="js/main.js"></script>
+
+	</body>
+</html>
