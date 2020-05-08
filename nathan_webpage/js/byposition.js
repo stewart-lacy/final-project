@@ -15,11 +15,16 @@ map.fitBounds(bounds);
 //https://gis.stackexchange.com/questions/238414/adding-a-new-and-removing-an-old-marker-every-time-the-user-click-on-the-map
 
 var theMarker = {};
-
-let shooter = "Point Guard";
-
+var data = [];
+let shooter = d3.select(".probability");
+let nullbutton = d3.select(".position");
 let probability = "0.57";
 
+
+shooter.on("click",function(){
+    var currentSelect = parseInt(nullbutton.text())
+    data.push(["upvote",currentSelect]);
+});
 
 map.on('click',function(e){
     posLat = parseInt(e.latlng.lat);

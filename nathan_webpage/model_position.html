@@ -78,6 +78,7 @@
                 <div class = "col-md-4">
                     <form action="{{url_for('predict')}}" method = "POST">
                         <label for ="target_names">Position</label>
+                            <h1 class = "position"> N/A</h1>
                             <select id="target_names">
                                 <option value = "C">Center</option>
                                 <option value = "PF">Power Forward</option>
@@ -86,8 +87,9 @@
                                 <option value = "SG">Shooting Guard</option>
                             </select>
                        <br><br>
-                       <input type = "button" onclick="getOption()"    
-                       value = "Prediction">
+                       <button type = "button" class= "btn btn-default probability" >
+                           <span class= "glyphicon glyphicon probability"></span> Probability
+                       </button>
                     </form>
                     <p id = "demo"></p>
                     <p>Information on the shot:</p>
