@@ -78,27 +78,24 @@
                 <div class = "col-md-4">
                     <form action="{{url_for('predict')}}" method = "POST">
                         <label for ="target_names">Position</label>
-                            <h1 class = "position"> N/A</h1>
                             <select id="target_names">
-                                <option value = "C">Center</option>
-                                <option value = "PF">Power Forward</option>
-                                <option value = "PG">Point Guard</option>
-                                <option value = "SF">Small Forward</option>
-                                <option value = "SG">Shooting Guard</option>
+                                <option value="C">Center</option>
+                                <option value="PF">Power Forward</option>
+                                <option value="PG">Point Guard</option>
+                                <option value="SF">Small Forward</option>
+                                <option value="SG">Shooting Guard</option>
                             </select>
                        <br><br>
-                       <button type = "button" class= "btn btn-default probability" >
-                           <span class= "glyphicon glyphicon probability"></span> Probability
+                       <button type="button" class="btn btn-default probability"  id="probability">
+                           <span class="glyphicon glyphicon probability"></span> Click for Probability
                        </button>
                     </form>
-                    <p id = "demo"></p>
-                    <p>Information on the shot:</p>
-                    <br>
+                         <p>Information on the shot:</p
                     <p>This shot was probably taken by:</p>
-                    <div id = "{{ predict_text }}"></div>
+                    <div id="outputposition"></div>
                     <hr>
                     <p>The probability of this estimate is:</p>
-                    <div id = "positionProbabilityResponse"></div>
+                    <div id="outputprob"></div>
 
                 </div> 
 

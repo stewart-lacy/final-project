@@ -16,14 +16,24 @@ map.fitBounds(bounds);
 
 var theMarker = {};
 var data = [];
-let shooter = d3.select(".probability");
-let nullbutton = d3.select(".position");
+let shooter = d3.select("#probability");
+let dropdown = d3.select("#target_names");
 let probability = "0.57";
 
 
 shooter.on("click",function(){
-    var currentSelect = parseInt(nullbutton.text())
+    console.log(dropdown.text())
+    var currentSelect = dropdown.node().selectedOptions[0].label
     data.push(["upvote",currentSelect]);
+    console.log(data)
+    d3.select('#outputposition').text(currentSelect);
+    //d3.select('#outputprob').text(probability);
+    d3.json("http://localhost:5000/predict").then (function(json){
+        console.log(json);
+        d3.select('#outputprob').text(json.toString());
+    });
+
+
 });
 
 map.on('click',function(e){
@@ -48,7 +58,7 @@ map.on('click',function(e){
 
 
 function emptyTheBoxes() {
-    let shooterInformation = d3.select("#positionShotResponse");
+    let shooterInformation = shooter;
     let probabilityInformation = d3.select("#positionProbabilityResponse")
 
     shooterInformation.html("");
@@ -59,7 +69,7 @@ function fillTheBoxes() {
     let shooterInformation = d3.select("#positionShotResponse");
     let probabilityInformation = d3.select("#positionProbabilityResponse")
 
-    shooterInformation.append("h5").text(shooter);
+    shooterInformation.append("h5").text(data);
     probabilityInformation.append("h5").text(probability);
 
 }
@@ -69,20 +79,20 @@ function choice(y) {
 }
 
 
-function kickoff() {
+//function kickoff() {
     
-    let dropdown = d3.select("#dropDown");
+ //   let dropdown = d3.select("#dropDown");
     
-    d3.json("data/standin_data.json").then(function(data) {
+   // d3.json("data/standin_data.json").then(function(data) {
 
-        console.log(data);
+      //  console.log(data);
 
-        data.names.forEach(function(name) {
-            dropdown.append("option").text(name).property("value");
-        });
+       // data.names.forEach(function(name) {
+     //       dropdown.append("option").text(name).property("value");
+      //  });
 
-    });
+ //   });
     
-}
+//}
 
-kickoff();
+//kickoff();
