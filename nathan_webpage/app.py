@@ -1,9 +1,12 @@
-from flask import Flask, redirect,url_for,render_template
+import numpy as np
+import pickle
+from flask import Flask, redirect,url_for,render_template, request,jsonify 
 from flask_bootstrap import Bootstrap
 from subprocess import Popen
 # 2. Create an app, being sure to pass __name__
 app = Flask(__name__)
 Bootstrap(app)
+model_open = pickle.load(open('model.pkl','rb'))
  
 
 # 3. Define what to do when a user hits the index route
@@ -19,27 +22,19 @@ def data():
 @app.route('/model_player.html')
 def model_player():
     return render_template("model_player.html")
-
-@app.route('/model_position.html')
-def model_position():
-    return render_template("model_position.html")
-
-@app.route('/model_position.html')
+ 
+@app.route('/model_position.html',methods = ['POST'])
 def model():
-    return render_template("model.html")
+    int_features = [int(x) for x in request.form.values()]
+    final_features = [np.array(int_features)]
+    prediction = model.predict(final_features)
 
-@app.route('/method')
-def method():
-    return render_template("method.html")
-
-
-# 4. Define what to do when a user hits the /about route
-##@app.route("/about")
-##def about():
-  ####return "Welcome to my 'About' page!"
-
+    output = round(prediction[0],2)
+    return render_template("model_position.html", prediction_text = 'Shot was made {}').format(output)
 
 if __name__ == "__main__":
     p = Popen(['python3 -m http.server'], shell=True)
     app.run(host='localhost', port=5000)
 app.run(debug=True)
+
+
