@@ -65,7 +65,7 @@
         <div class="row">
 
             <div class="col-md-8">
-                <p>Click a position on the basketball court to predict which player will shoot at the bottom basket.</p>
+                <p>Click on the probability button and select a position for the probabily of a position making a shot</p>
 
                 <div class="wrapper">
 
@@ -79,11 +79,11 @@
                 <form action="{{url_for('predict')}}" method="POST">
                     <label for="target_names">Position</label>
                     <select id="target_names">
-                        <option value="C">Center</option>
-                        <option value="PF">Power Forward</option>
-                        <option value="PG">Point Guard</option>
-                        <option value="SF">Small Forward</option>
-                        <option value="SG">Shooting Guard</option>
+                        <option value="55%">Center</option>
+                        <option value="32%">Power Forward</option>
+                        <option value="34%">Point Guard</option>
+                        <option value="0%">Small Forward</option>
+                        <option value="43%">Shooting Guard</option>
                     </select>
                     <br><br>
                     <button type="button" class="btn btn-default probability" id="probability">

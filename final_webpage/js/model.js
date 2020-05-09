@@ -25,56 +25,19 @@ let probability = "0.57";
 shooter.on("click", function () {
     console.log(dropdown.text())
     var currentSelect = dropdown.node().selectedOptions[0].label
+    var currentSelect1 = dropdown.node().value
+
     data.push(["upvote", currentSelect]);
     console.log(data)
     d3.select('#outputposition').text(currentSelect);
-    //d3.select('#outputprob').text(probability);
-    d3.json("http://localhost:5000/predict").then(function (json) {
-        console.log(json);
-        d3.select('#outputprob').text(json.toString());
-    });
+    d3.select('#outputprob').text(currentSelect1);
+   // d3.json("http://localhost:5000/predict").then(function (json) {
+    //    console.log(json);
+      //  d3.select('#outputprob').text(json.toString());
+    //});
 
 
 });
 
-map.on('click', function (e) {
-    posLat = parseInt(e.latlng.lat);
-    posLon = parseInt(e.latlng.lng);
 
-    console.log("You clicked the map at LAT: " + posLat + " and LONG: " + posLon);
-    //Clear existing marker, 
-
-    if (theMarker != undefined) {
-        map.removeLayer(theMarker);
-    };
-
-    emptyTheBoxes();
-
-    //Add a marker to show where you clicked.
-    theMarker = L.marker([posLat, posLon]).addTo(map);
-
-    fillTheBoxes();
-});
-
-
-function emptyTheBoxes() {
-    let shooterInformation = shooter;
-    let probabilityInformation = d3.select("#positionProbabilityResponse")
-
-    shooterInformation.html("");
-    probabilityInformation.html("");
-}
-
-function fillTheBoxes() {
-    let shooterInformation = d3.select("#positionShotResponse");
-    let probabilityInformation = d3.select("#positionProbabilityResponse")
-
-    shooterInformation.append("h5").text(data);
-    probabilityInformation.append("h5").text(probability);
-
-}
-
-function choice(y) {
-    console.log(y);
-}
 

@@ -1,6 +1,6 @@
 import numpy as np
 import pickle
-from flask import Flask, redirect,url_for,render_template, request,jsonify
+from flask import Flask, redirect,url_for,render_template, request,jsonify, abort
 from flask_bootstrap import Bootstrap
 from subprocess import Popen
 # 2. Create an app, being sure to pass __name__
@@ -45,9 +45,14 @@ def position_shots():
     ##output = round(prediction[0],2)
     ##return render_template("model_position.html", prediction_text = 'Shot was made {}').format(output)
 
-@app.route('/predict', methods=['GET'])
+@app.route('/predict', methods=['GET','POST'])
 def predict():
-    return jsonify("test")
+    data = request.get_json(force=True)
+    predict_request = [data['enc_player position'],data['enc_shot outcome']]
+    predict_request = np.array(predict_request)
+    y_hat = model_open.predict(predict_request)
+    output = [y_hat[0]]
+    return jsonify(results = output)
  
 if __name__ == "__main__":
     app.run(host='localhost', port=5000)
