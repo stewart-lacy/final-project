@@ -30,27 +30,27 @@
                 <ul class="navbar-nav mr-auto">
 
                 <li class="nav-item">
-                <a class="nav-link" href="index.html">Home<span class="sr-only"></span></a>
+                    <a class="nav-link" href="index.html">Home<span class="sr-only"></span></a>
                 </li>
 
                 <li class="nav-item">
-                <a class="nav-link" href="position_shots.html">Shots by Position<span class="sr-only"></span></a>
+                    <a class="nav-link" href="data.html">Data<span class="sr-only"></span></a>
                 </li>
 
                 <li class="nav-item">
-                <a class="nav-link" href="player_shots.html">Shots by Player<span class="sr-only"></span></a>
+                    <a class="nav-link" href="position_shots.html">Shots by Position<span class="sr-only"></span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="player_shots.html">Shots by Player<span class="sr-only"></span></a>
                 </li>
 
                 <li class="nav-item">
                   <a class="nav-link" href="model.html">Predictive Model<span class="sr-only"></span></a>
                 </li>                
 
-                <li class="nav-item">
-                <a class="nav-link" href="data.html">Data<span class="sr-only"></span></a>
-                </li>
-
                 <li class="nav-item active">
-                <a class="nav-link" href="method.html">Method<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="method.html">Method<span class="sr-only">(current)</span></a>
                 </li>
 
             </div>
@@ -63,8 +63,8 @@
                     <div class = "box">
                         <img src = "img/basketball.png" alt="a basketball" id = "ball">
                         <div class = "boxtext">
-                            <h1>Who Took the Shot?</h1>
-                            <h3><i>A detective story.</i></h3>
+                            <h1>Methodology</h1>
+                            <h3><i>Making it all work</i></h3>
                         </div>
                     </div>
 
@@ -73,15 +73,194 @@
 
             <div class = "row">
 
-                <div class = "row">
+                <div class = "col-md-6">
 
-                    <div class = "col-md-12">
-                        <p>Method!</p>
+                    <h3>Initial Processing</h3><br>
+                    <p>Data was collected from the website of the National Basketball Association (NBA), which collects data on every shot taken over the course of a basketball season (in this case, the 2016-2017 season).
+                        <br><br>
+                        Manipulations included removal of opponent shots from the shot log and the 'reflection' of shot coordinates so that all shots appear to have been taken from the 
+                        same side of the court. This was necessary for our prediction model to work. 
+                    </p>
+
+                </div>
+                
+                <div class = "col-md-6">
+                    
+                    <div class = "methodWrapper">
+
+                        <div class = "methodFrame">
+
+                            <img class = "methodImage" src = "img/dwyane_wade.png" alt="A matplotlib shot chart for Dwyane Wade">
+                        
+                        </div>
+
+                        <p class = "methodCaption">
+                            An early shot chart generated in Matplotlib for Dwyane Wade, using the NBA data and a basketball court template.
+                        </p>
+
                     </div>
+                    
 
                 </div>
 
             </div>
+
+            <hr>
+            
+            <div class = "row">
+
+                <div class = "col-md-6">
+                    
+                    <div class = "methodWrapper">
+
+                        <div class = "methodFrame">
+
+                            <img class = "methodImage" src = "img/outcomes.png" alt="outcomes from the machine learning model">
+                        
+                        </div>
+
+                        <p class = "methodCaption">
+                            Precision of our ML model
+                        </p>
+
+                    </div>
+                    
+
+                </div>
+
+                <div class = "col-md-6">
+
+                    <h3>Machine Learning Model</h3><br>
+                    <p>The machine learning model (Gradient Boosting Regressor) was written with SKLearn and cleaned up with SKLearn encode functions.  
+                        <br><br>
+                        When we first analyzed the data there were more than 5 positions on the floor (which were discovered to be the two rookies).  We dropped these groups to get more accurate feedback. (This brought our model from 41% up to 61%).
+                    </p>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class = "row">
+
+                <div class = "col-md-6">
+                    <h3>Flask App</h3><br>
+                    <p>
+                        We created a flask app and wrote code for the machine learning to talk to the website to output a result based on a given input. 
+                        <br>
+                        We used a dropdown menu to collect a given input to output the machine learning prediction
+                        Flask app.
+                        
+                    </p>
+                </div>
+
+
+
+                <div class = "col-md-6">
+                    
+                    <div class = "methodWrapper">
+
+                        <div class = "methodFrame">
+                    
+                            <img class = "methodImage" src = "img/flask_code.png" alt="flask code">
+
+                        </div>
+
+                        <p class = "methodCaption">
+                            Our flask code
+                        </p>
+
+                    </div>
+                
+                </div>
+            </div>
+            
+            <hr>
+
+            <div class = "row">
+
+                <div class = "col-md-6">
+                    
+                    <div class = "methodWrapper">
+
+                        <div class = "methodFrame">
+                    
+                            <img class = "methodImage" src = "img/basketballcourt_code.png" alt="leaflet code">
+
+                        </div>
+
+                        <p class = "methodCaption">
+                            Code for generating a non-geographical map
+                        </p>
+
+                    </div>
+                
+                </div>
+
+                <div class = "col-md-6">
+                    <h3>Application of Leaflet</h3><br>
+                    <p>
+                        Our interface and displays relied heavily on the Leaflet library. 
+                        Leaflet isn't constrained to maps of the Earth and can function using a simple xy coordinate system.
+                        <br>
+                        In this case, the map is overlayed with an image of a basketball court so that we can project data or, alternatively, enter queries into our prediction model.
+                        
+                    </p>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class = "row">
+
+                <div class = "col-md-6">
+                    <h3>Our toolkit</h3><br>
+                    <p>The project involved a diverse array of programming languages and libraries to complete. </p>
+                    <dl>
+                        <dt>Pandas Library (Python)</dt>
+                        <dd>Used for initial data cleaning and organization.</dd>
+                        <dt>Matplotlib Library (Python)</dt>
+                        <dd>Employed for early data visualizations and planning.</dd>
+                        <dt>SKLearn Library (Python)</dt>
+                        <dd>The machine learning model (Gradient Boosting Regressor) was written with SKLearn and cleaned up with SKLearn encode functions.</dd>
+                        <dt>Flask Library (Python)</dt>
+                        <dd>Flask was used to integrate the machine learning algorithm and the frontend webpage.</dd>
+                        <dt>Bootstrap Libary (Javascript)</dt>
+                        <dd>Used for webpage formatting.</dd>
+                        <dt>JQuery Library (Javascript)</dt>
+                        <dd>Used to integrate the flask app and the website, and as a helping library for other tasks.</dd>
+                        <dt>D3 Libary (Javascript)</dt>
+                        <dd>Managed data on the webpage.</dd>
+                        <dt>Leaflet (Javascript)</dt>
+                        <dd>Managed the basketball court maps and the shot diagrams.</dd>
+                    </dl>
+                    
+                </div>
+
+                <div class = "col-md-6">
+                    
+                    <div class = "methodWrapper">
+
+                        <div class = "methodFrame">
+                    
+                            <img class = "methodImage" src = "img/libraries.png" alt="list of libraries">
+
+                        </div>
+
+                        <p class = "methodCaption">
+                            Python libraries used during data manipulation and machine learning development
+                        </p>
+
+                    </div>
+                
+                </div>
+                
+
+            </div>
+
+
 
         </div>
         

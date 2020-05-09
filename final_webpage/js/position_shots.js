@@ -80,7 +80,7 @@ function renderdata(y) {
         dataLayerGroup = L.geoJson(geojson, {
             filter: nameFilter,
             pointToLayer: function (feature, latlng) {
-                return new L.CircleMarker(latlng, {radius: 1, fillOpacity: 0.8});
+                return new L.CircleMarker(latlng, {radius: 1, fillOpacity: 0.8, color: getColor(feature.properties.Outcome)});
             },
             onEachFeature: function (feature, layer) {
                 layer.bindPopup("<h5>" + feature.properties.Outcome + "</h5> <hr> <p>" + feature.properties.Player + "<br>" + feature.properties.Position)
@@ -99,6 +99,19 @@ function renderdata(y) {
 
     addLayerToMap();
 
+}
+
+// https://stackoverflow.com/questions/30367076/leaflet-circle-color-depend-on-variable
+
+function getColor(Outcome) {
+    switch(Outcome) {
+        case "BLOCKED":
+            return "red";
+        case "MISSED":
+            return "orange";
+        default: 
+            return "green";
+    }
 }
 
 function choice(y) {

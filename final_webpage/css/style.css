@@ -58,7 +58,8 @@
 }
 
 #toprow {
-    margin-top: 30px;
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 
 .table {
@@ -75,6 +76,52 @@
 
 }
 
+dt {
+	font-size: 16px;
+	margin: 0;
+	color: #0a183d;
+	font-weight: 600;
+	line-height: 1;
+}
+
+dd {
+	font-size: 15px;
+	font-style: italic;
+	color: #6a7080;
+	line-height: 1.8;
+	font-weight: 500;
+}
+
+.methodWrapper {
+	height: auto;
+	display: inline-block;
+	margin: 20px;
+	text-align: center;
+}
+
+.methodFrame {
+	width: 500px;
+	height: auto;
+	border: 1px solid black;
+	vertical-align: middle;
+	text-align: center;
+	display: table-cell;
+}
+
+.methodImage {
+	max-width: 100%;
+	max-height: 100%;
+	display: block;
+	margin: 0 auto;
+}
+
+.methodCaption {
+	font-size: 15px;
+	font-style: italic;
+	color: #6a7080;
+	line-height: 1.8;
+	font-weight: 500;
+}
 
 /*=================================
 -----------------------------------
